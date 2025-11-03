@@ -7,11 +7,13 @@ const cartItems = [
 ];
 
 const subtotal = cartItems.reduce((subtotal, product) => {
+  // console.log("subtotal: ", subtotal);
+  // console.log("product:", product);
 
     return subtotal + product.price * product.quantity;
 }, 0)
 
-console.log(subtotal);
+// console.log(subtotal);
 
 // Find best scorer
 
@@ -23,4 +25,12 @@ const players = [
   { name: "Sohel Rana", score: 72 },
 ];
 
-// console.log(bestScorer);
+const bestScorer = players.reduce((bestPlayer, player) => {
+  console.log(bestPlayer, player);
+  if( bestPlayer.score > player.score){
+    return bestPlayer;
+  }
+  return player
+}, players[0])
+
+console.log(bestScorer);
